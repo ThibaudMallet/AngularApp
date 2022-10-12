@@ -1,7 +1,10 @@
 <div class="face-snap-card">
-  <h2>{{ title }}</h2>
-  <p>Mis en ligne le {{ createdDate }}</p>
-  <img [src]="imageUrl" [alt]="title">
-  <p>{{ description }}</p>
-  <p>Nombre de likes : {{ likes }}</p>
+  <h2>{{ imageShare.title }}</h2>
+  <p>Mis en ligne le {{ imageShare.createdDate }}</p>
+  <img [src]="imageShare.imageUrl" [alt]="imageShare.title">
+  <p>{{ imageShare.description }}</p>
+  <p>
+    <button (click)="onClickLike()">{{ textButton }}</button>
+    Nombre de likes : {{ imageShare.likes }}
+  </p>
 </div>
