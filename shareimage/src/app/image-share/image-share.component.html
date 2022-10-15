@@ -1,10 +1,11 @@
-<div class="face-snap-card">
-  <h2>{{ imageShare.title }}</h2>
+<div class="face-snap-card" [ngClass]="{ liked: textButton === 'Dislike !' }">
+  <h2>{{ imageShare.title | titlecase }}</h2>
   <p>Mis en ligne le {{ imageShare.createdDate }}</p>
   <img [src]="imageShare.imageUrl" [alt]="imageShare.title">
   <p>{{ imageShare.description }}</p>
+  <p *ngIf="imageShare.location">Photo prise à {{ imageShare.location }}</p>
   <p>
     <button (click)="onClickLike()">{{ textButton }}</button>
-    Nombre de likes : {{ imageShare.likes }}
+    <span [ngStyle]="{ color: 'rgb(0,' + imageShare.likes + ',0)' }" > {{ imageShare.likes }}</span>
   </p>
 </div>

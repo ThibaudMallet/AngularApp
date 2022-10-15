@@ -10,8 +10,6 @@
   <title>AppAngular</title>
 </head>
 <body>
-  <app-image-share [imageShare]="myImage"></app-image-share>
-  <app-image-share [imageShare]="myOtherImage"></app-image-share>
-  <app-image-share [imageShare]="myLastImage"></app-image-share>
+  <app-image-share *ngFor="let image of imageShare" [imageShare]="image"></app-image-share>
 </body>
 </html>
