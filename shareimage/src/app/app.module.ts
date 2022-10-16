@@ -7,16 +7,20 @@ import { AppComponent } from './app.component';
 import { ImageShareComponent } from './image-share/image-share.component';
 import { ImageShareListComponent } from './image-share-list/image-share-list.component';
 import { HeaderComponent } from './header/header.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImageShareComponent,
     ImageShareListComponent,
-    HeaderComponent
+    HeaderComponent,
+    LandingPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'}
