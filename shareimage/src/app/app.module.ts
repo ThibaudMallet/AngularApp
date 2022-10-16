@@ -5,11 +5,15 @@ import * as fr from '@angular/common/locales/fr';
 
 import { AppComponent } from './app.component';
 import { ImageShareComponent } from './image-share/image-share.component';
+import { ImageShareListComponent } from './image-share-list/image-share-list.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ImageShareComponent
+    ImageShareComponent,
+    ImageShareListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule

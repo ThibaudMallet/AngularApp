@@ -1,7 +1,4 @@
 <div class="face-snap-card" [ngClass]="{ liked: textButton === 'Dislike !' }">
-  <p>{{ 46589526.32 | number: '1.0-1' }}</p>
-  <p>{{ 0.3367 | percent: '1.0-1' }}</p>
-  <p> {{ 344.36 | currency: 'EUR' : 'code' }} </p>
   <h2>{{ imageShare.title | titlecase }}</h2>
   <p>Mis en ligne {{ imageShare.createdDate | date: 'le dd MMMM yyyy à HH:mm' }}</p>
   <img [src]="imageShare.imageUrl" [alt]="imageShare.title">
