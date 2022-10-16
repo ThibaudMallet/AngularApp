@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { ImageShare } from '../models/image-share.model';
 import { ImageShareService } from '../services/image-share.service';
 
@@ -12,7 +13,9 @@ export class ImageShareComponent implements OnInit {
 
     textButton!: string;
 
-    constructor(private imageShareService: ImageShareService) {}
+    constructor(private imageShareService: ImageShareService,
+                private router: Router
+      ) {}
 
   ngOnInit()
   {
@@ -28,5 +31,9 @@ export class ImageShareComponent implements OnInit {
       this.imageShareService.likeImageShareById(this.imageShare.id, 'dislike');
       this.textButton = 'Like !';
     }
+  }
+
+  onViewImageShare() {
+    this.router.navigateByUrl(`imageshare/${this.imageShare.id}`)
   }
 }

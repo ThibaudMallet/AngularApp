@@ -9,6 +9,7 @@ import { ImageShareListComponent } from './image-share-list/image-share-list.com
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SingleImageShareComponent } from './single-image-share/single-image-share.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     ImageShareComponent,
     ImageShareListComponent,
     HeaderComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    SingleImageShareComponent
   ],
   imports: [
     BrowserModule,
