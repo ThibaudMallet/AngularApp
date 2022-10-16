@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ImageShare } from '../models/image-share.model';
+import { ImageShareService } from '../services/image-share.service';
 
 @Component({
   selector: 'app-image-share',
@@ -9,12 +10,9 @@ import { ImageShare } from '../models/image-share.model';
 export class ImageShareComponent implements OnInit {
   @Input() imageShare!: ImageShare;
 
-  title!: string;
-  description!: string;
-  createdDate!: Date;
-  likes!: number;
-  imageUrl!: string;
-  textButton!: string;
+    textButton!: string;
+
+    constructor(private imageShareService: ImageShareService) {}
 
   ngOnInit()
   {
@@ -24,10 +22,10 @@ export class ImageShareComponent implements OnInit {
   onClickLike()
   {
     if (this.textButton === 'Like !') {
-      this.imageShare.likes++;
+      this.imageShareService.likeImageShareById(this.imageShare.id, 'like');
       this.textButton = "Dislike !";
     } else {
-      this.imageShare.likes--;
+      this.imageShareService.likeImageShareById(this.imageShare.id, 'dislike');
       this.textButton = 'Like !';
     }
   }

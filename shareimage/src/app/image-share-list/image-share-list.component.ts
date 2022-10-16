@@ -14,7 +14,7 @@ export class ImageShareListComponent implements OnInit {
   constructor(private ImageShareService: ImageShareService) { }
 
   ngOnInit(): void {
-    this.imageShare = this.ImageShareService.imageShare
+    this.imageShare = this.ImageShareService.getAllImageShare();
   }
 
 }
